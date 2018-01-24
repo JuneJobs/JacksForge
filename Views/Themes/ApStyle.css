@@ -1,0 +1,81 @@
+﻿body {
+
+}
+
+.tableStyle_search {
+    margin: 0px !important;
+    background:#FFD101 !important;
+}
+.tableStyle_search >div:first-child {
+    padding:0px 3px 3px 0px !important;
+    background:#FFD101 !important;
+}
+
+.tableStyle_main {
+    margin: 0px !important;
+    background:#C2D3E7 !important;
+    /*padding: 3px !important;*/
+}
+.tableStyle_main >div:first-child  {
+    padding:3px 0px 3px 3px !important;
+    background:#C2D3E7 !important;
+}
+.btn_save {
+    /*background-image: url(../../../Resource/Themes/Save_1.png) !important;*/
+    background-size:contain;
+}
+.x-column-header {
+    font-weight: 500;
+    font-size: 15px;
+    font-family: NanumGothic !important;
+}
+.x-grid-item {
+    font-size: 13px;
+    font-family: NanumGothic !important;
+}
+
+ .yellow-button {
+    background: #ffd800;
+    background-color:#ffd800 !important;
+    border:solid 1px #F1BA22 !important;
+}
+.x-btn-over.yellow-button {
+    background: #ffd800;
+    background-color: #F1BA22 !important;
+    background-image: none;
+}
+.x-btn-pressed.yellow-button {
+    background: #ffd800;
+    background-color:#F1BA22 !important;
+    border:solid 1px #F1BA22 !important;
+}
+.red-button {
+    background: #F25022;
+    background-color:#ff6a00 !important;
+    border:solid 1px #F25022 !important;
+}
+.x-btn-over.red-button {
+    background: #F25022;
+    background-color: #bf0101 !important;
+    background-image: none;
+}
+.x-btn-pressed.red-button {
+    background: #F25022;
+    background-color:#F25022 !important;
+    border:solid 1px #F25022 !important;
+}
+.green-button {
+    background: #37b203;
+    background-color:#8EBB22 !important;
+    border:solid 1px #37b203 !important;
+}
+.x-btn-over.green-button {
+    background: #37b203;
+    background-color: #37b203 !important;
+    background-image: none;
+}
+.x-btn-pressed.green-button {
+    background: #8EBB22;
+    background-color:#37b203 !important;
+    border:solid 1px #37b203 !important;
+}
