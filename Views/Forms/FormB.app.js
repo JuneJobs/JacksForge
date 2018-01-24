@@ -1,16 +1,14 @@
 ﻿/// <reference path="../Scripts/ext-all-debug.js" />
 /// <reference path="../Scripts/component.js" />
 /// <reference path="../Scripts/noncomponent.js" />
-
 /**
-* @Qualcomm Institute
+* @KMU Capston project
 * @subject load_page 
 * @brief insert new page into master form
 * @param trees node
 * @return 
 * @auter Jack Compbel
 */
-
 txa_input.eKeyDown = function(e) {
     if(e.keyCode == 13){
         txa_input.setValue(" " + (txa_input.getValue()).replace(/\n/g, " ").replace(/\. /g, "\.\n "));
