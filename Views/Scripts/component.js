@@ -674,17 +674,17 @@ ApGrid.prototype.addColumn = function (type, columnText, paramId, width, align) 
             columnType = Ext.create('Ext.grid.column.Column', {
                 text: columnText,
                 xtype: 'datecolumn',
-                format: 'Y-m-d',
-                dataIndex: paramId,
-                width: width,
-                align: 'center',
-                sortable: true,
-                renderer: Ext.util.Format.dateRenderer('Y-m-d'),
                 editor: {
                     xtype: 'datefield',
                     format: 'Y-m-d',
                     submitFormat: 'c'
-                }
+                },
+                format: 'Y-m-d',
+                dataIndex: paramId,
+                width: width,
+                align: 'center',
+                sortable: true
+                //,renderer: Ext.util.Format.dateRenderer('Y-m-d')
             });
             break;
         case 'check':

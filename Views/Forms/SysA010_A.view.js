@@ -10,10 +10,10 @@ var tbl_CODE_H = ApTable.create();
 tbl_CODE_H.setTarget();
 var btn_CODE_H_UPDATE = ApButton.create('UPDATE');
 
-var grd_CODE_H = ApGrid.create(false, true);
-grd_CODE_H.addColumn('text', 'Code Name','HCDNM', 200);
-grd_CODE_H.addColumn('text', 'Code Value','HCD',200);
-grd_CODE_H.addColumn('date', '등록일', 'E_DT', 100);
+var grd_CODE_H = ApGrid.create(true, true);
+grd_CODE_H.addColumn('text', 'Code','HCDNM', 200);
+grd_CODE_H.addColumn('text', 'Code Name','HCD',200);
+grd_CODE_H.addColumn('date', 'Last Updated', 'E_DT', 120);
 
 var pnl_CODE_D = ApPanel.create();
 pnl_CODE_D.header = false;
