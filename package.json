@@ -9,9 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "assert": "^1.4.1",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "google-translate-api": "^2.3.0",
+    "mongodb": "^3.0.2",
     "x-frame-options": "^1.0.0"
   }
 }

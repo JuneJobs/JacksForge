@@ -5,6 +5,43 @@ var _webPort = 8080;
 var express = require("express");
 //var xFrameOptions = require('x-frame-options');
 var bodyParser = require('body-parser');
+var MongoClient = require('mongodb').MongoClient;
+var assert = require('assert');
+
+const url = 'mongodb://jacks.qualcomminst.com';
+const dbName = 'System';
+//--Test Area
+
+const insertDocuments = function (db, callback) {
+  // Get the documents collection
+  const collection = db.collection('Code');
+  // Insert some documents
+  collection.insertMany([
+    { a: 1 }, { a: 2 }, { a: 3 }
+  ], function (err, result) {
+    assert.equal(err, null);
+    assert.equal(3, result.result.n);
+    assert.equal(3, result.ops.length);
+    console.log("Inserted 3 documents into the collection");
+    callback(result);
+  });
+}
+
+MongoClient.connect(url, {
+  poolSize: 10, ssl: false
+}, function (err, client) {
+  assert.equal(null, err);
+  console.log("Connected correctly to server");
+
+  const db = client.db(dbName);
+  
+  insertDocuments(db, function () {
+    client.close();
+  });
+});
+
+//--Test Area
+
 global.app = express();
 global.router = express.Router(); //라우터 객체 생성
 global.path = __dirname;
