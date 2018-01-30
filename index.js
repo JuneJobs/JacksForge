@@ -26,6 +26,18 @@ const insertDocuments = function (db, callback) {
     callback(result);
   });
 }
+const removeDocument = function (db, callback) {
+  // Get the documents collection
+  const collection = db.collection('Code');
+  // Delete document where a is 3
+  collection.deleteOne({ a: 3 }, function (err, result) {
+    assert.equal(err, null);
+    assert.equal(1, result.result.n);
+    console.log("Removed the document with the field a equal to 3");
+    callback(result);
+  });
+  
+}
 
 MongoClient.connect(url, {
   poolSize: 10, ssl: false
@@ -36,6 +48,19 @@ MongoClient.connect(url, {
   const db = client.db(dbName);
   
   insertDocuments(db, function () {
+    client.close();
+  });
+});
+
+MongoClient.connect(url, {
+  poolSize: 10, ssl: false
+}, function (err, client) {
+  assert.equal(null, err);
+  console.log("Connected correctly to server");
+
+  const db = client.db(dbName);
+
+  removeDocument(db, function () {
     client.close();
   });
 });
