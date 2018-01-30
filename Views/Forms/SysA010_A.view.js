@@ -7,15 +7,20 @@ var pnl_CODE_H = ApPanel.create();
 pnl_CODE_H.header = false;
 
 var tbl_CODE_H = ApTable.create();
+tbl_CODE_H.setTarget();
+var btn_CODE_H_UPDATE = ApButton.create('UPDATE');
 
-var grd_CODE_H = ApGrid.create(true, true);
-grd_CODE_H.addColumn('text','Code Name', 60);
+var grd_CODE_H = ApGrid.create(false, true);
+grd_CODE_H.addColumn('text', 'Code Name','HCDNM', 200);
+grd_CODE_H.addColumn('text', 'Code Value','HCD',200);
+grd_CODE_H.addColumn('date', '등록일', 'E_DT', 100);
 
 var pnl_CODE_D = ApPanel.create();
 pnl_CODE_D.header = false;
 
 
 ApEvent.onlaod = function(){
-    viewPanel.divideH(pnl_CODE_H, pnl_CODE_D);
-    pnl_CODE_H.divideH(tbl_CODE_H, grd_CODE_H);
+    viewPanel.divideV(pnl_CODE_H, pnl_CODE_D);
+    pnl_CODE_H.divideV(tbl_CODE_H, grd_CODE_H);
+    tbl_CODE_H.setHeight(50);
 }
